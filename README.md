@@ -1,12 +1,14 @@
-Node作为前后端分离的”利器“由于它使用JS语法的特殊性，可以使得前端更好的利用Node来作为中间层十分方便得调用后台提供的“黑盒”API。
+Node作为前后端分离的”利器“由于它使用JS语法的特殊性，可以使得前端更好的利用Node来作为中间层十分方便得调用后台提供的“黑盒”API。即便是使用Node为主作为服务端开发在项目中也会经常用到要去其他的系统调用服务的场景。
 
-本文将介绍使用Node在服务端调用API时面对最基本的HTTP认证 -- HTTP Basic Authentication认证的处理方式。
+请求的认证一直是一个web系统很重要的一环，直接关系到了系统的安全。对于Node在服务端方面，稍微复杂的认证机制使用的最多的就是[passport](https://www.npmjs.com/package/passport)模块，通过它强大而又灵活的Strategy机制，官方同时也提供了很多策略满足很多常见的场景。当然今天的主题是最简单的基础认证 HTTP Basic Authentication，提供了对http最为基础的认证策略，即用户名和密码。对于服务端调用API的场景加上这个基本认证也会比在前端直接使用这种比较“空”的更加合适。
+
+本文将介绍使用Node在服务端调用API时面对最基本的HTTP认证 -- HTTP Basic Authentication认证的处理方式。即不同的服务端`http client`诸如[axios](https://www.npmjs.com/package/axios),[request](https://www.npmjs.com/package/request),[restler](https://www.npmjs.com/package/restler)的使用。
 
 ## HTTP Basic Authentication
 
 首先对HTTP Basic Authentication这个最简单的http认证形式进行简单介绍
 
-![](https://user-images.githubusercontent.com/22891804/35735459-ccbcd13a-085f-11e8-9a6d-16924a934312.jpg)
+![HTTP Basic Authentication](https://user-images.githubusercontent.com/22891804/35735459-ccbcd13a-085f-11e8-9a6d-16924a934312.jpg)
 
 上图所示，在客户端进行资源请求的时候由于该接口API设置了http基本认证对资源的访问进行了限制，则客户端必须提供用户名和密码并且服务端验证通过时才会得到资源。
 
