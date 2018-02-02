@@ -138,4 +138,11 @@ rest.post('http://localhost:3000/api',{
 
 最后，如果有错误与不足还希望您能指出:)
 [完整demo地址](https://github.com/ray1121/basic-http-authentication-express4-demo)
+```
+git clone https://github.com/ray1121/basic-http-authentication-express4-demo
+
+cd basic-http-authentication-express4-demo && npm install 
+
+//Then you can test and modify to use the another modules' methods
+
 [个人博客站](https://isliulei.com)
