@@ -133,3 +133,9 @@ rest.post('http://localhost:3000/api',{
 最后是`restler`模块,需要的认证信息直接是其第二个参数options中的两个字段`username`和`password`,携带在body中的信息依旧是放在`data`字段中，用监听事件的方式监听`complete`事件发生触发回调函数你就得到了通过验证的消息`{ key: 'you get the money' }`。
 
 当然上述三个模块以及浏览器发送请求不带认证信息都将得到带着401的"go away",三个模块不在请求的body中带上参数`need`都会”show you the gold”。
+
+## 后续
+
+最后，如果有错误与不足还希望您能指出:)
+[完整demo地址](https://github.com/ray1121/basic-http-authentication-express4-demo)
+[个人博客站](https://isliulei.com)
