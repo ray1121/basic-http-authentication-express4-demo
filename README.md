@@ -6,7 +6,7 @@ Node作为前后端分离的”利器“由于它使用JS语法的特殊性，�
 
 首先对HTTP Basic Authentication这个最简单的http认证形式进行简单介绍
 
-{%asset_img http-basic.jpg%}
+![](https://user-images.githubusercontent.com/22891804/35735459-ccbcd13a-085f-11e8-9a6d-16924a934312.jpg)
 
 上图所示，在客户端进行资源请求的时候由于该接口API设置了http基本认证对资源的访问进行了限制，则客户端必须提供用户名和密码并且服务端验证通过时才会得到资源。
 
